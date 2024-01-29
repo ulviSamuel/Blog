@@ -26,6 +26,7 @@
                 echo "</div>";
                 echo "</div>";
             }
+            require_once("footer.html");
         ?>
     </body>
 </html>
