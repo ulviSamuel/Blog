@@ -1,0 +1,20 @@
+body
+{
+    
+}
+
+#header
+{
+    display: flex;
+}
+
+#logo
+{
+    width: 10%;
+    height: fit-content;
+}
+
+#titolo
+{
+    margin-left: 2%;
+}
