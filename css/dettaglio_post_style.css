@@ -1,0 +1,68 @@
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.headerPost {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5%;
+}
+
+.btnTornaIndietro
+{
+    
+}
+
+.btnLogin
+{
+    
+}
+
+.headerPost button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.headerPost button:hover {
+    background-color: #0056b3;
+}
+
+.titoloPost {
+    font-size: 250%;
+    margin: 0 auto;
+}
+
+.dataPost {
+    font-size: 100%;
+    color: #666;
+    margin-right: 2%;
+}
+
+.fotoPost {
+    max-width: 90%;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+    border-radius: 20px;
+}
+
+.descrizionePost {
+    font-size: 150%;
+    line-height: 1.6;
+    margin: 5%;
+    text-align: center;
+}
+
+#noPost {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 50px;
+}

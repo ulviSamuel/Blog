@@ -56,3 +56,9 @@ body {
 {
     display: flex;
 }
+
+.linkPost
+{
+    text-decoration: none;
+    color: white;
+}
