@@ -1,6 +1,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="css/dettaglio_post_style.css">
+        <?php session_start(); ?>
     </head>
 
     <body>
@@ -28,9 +29,12 @@
                         echo "<h2 class='titoloPost'>$titoloPost</h2>";
                         $dataFormattata = date("d-m-Y", strtotime($dataCreazionePost));
                         echo "<span class='dataPost'>$dataFormattata</span>";
-                        echo "<a href='login.php'>";
-                        echo "<button class='btnLogin'>Login</button>";
-                        echo "</a>";
+                        if(!isset($_SESSION['idUtente']))
+                        {
+                            echo "<a href='login.php'>";
+                            echo "<button class='btnLogin'>Login</button>";
+                            echo "</a>";
+                        }
                         echo "</div>";
                         echo "<img class='fotoPost' src='$pathFotoPost' alt='foto post'>";
                         echo "<p class='descrizionePost'>$descrizionePost</p>";

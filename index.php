@@ -1,11 +1,21 @@
 <html>
     <head>
         <link rel="stylesheet" href="css/home_style.css">
+        <?php session_start(); ?>
     </head>
 
     <body>
+        <?php require_once("header.html"); ?>
+        <div id='btnLoginRow'>
+            <h2 id='testoBenvenuto'>Benvenuto!</h2>
         <?php 
-            require_once("header.html");
+            if(!isset($_SESSION['idUtente']))
+            {
+                echo "<a id='linkLogin' href='login.php'>";
+                echo "<button id='btnLogin'>Login</button>";
+                echo "</a>";
+            }
+            echo "</div>";
             require_once("variabili_connessione.php");
             $sql = "SELECT idPost, titoloPost, descrizionePost, dataCreazionePost, pathFotoPost FROM tpost WHERE dataEliminazionePost IS NULL";
             $res = mysqli_query($con, $sql);

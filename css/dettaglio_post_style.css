@@ -14,11 +14,13 @@ body {
 .btnTornaIndietro
 {
     padding: 3%;
+    font-size: 105%;
 }
 
 .btnLogin
 {
     padding: 30% 40%;
+    font-size: 105%;
 }
 
 .headerPost button {

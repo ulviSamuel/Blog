@@ -62,3 +62,40 @@ body {
     text-decoration: none;
     color: white;
 }
+
+#btnLoginRow
+{
+    display: flex;
+}
+
+#btnLogin
+{
+    color: white;
+    font-size: 130%;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 150%;
+    height: 70%;
+}
+
+#btnLogin:hover {
+    background-color: #0056b3;
+}
+
+#testoBenvenuto
+{
+    margin-left: 3%;
+    font-size: 180%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+#linkLogin
+{
+    margin-left: auto;
+    margin-right: 5%;
+}
