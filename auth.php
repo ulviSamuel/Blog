@@ -12,12 +12,13 @@
                 {
                     $password = $_POST['password'];
                     require_once("variabili_connessione.php");
-                    $sql = "SELECT idUtente FROM tutente WHERE userName = '$username' AND passWord = '$password'";
+                    $sql = "SELECT idUtente, userName FROM tutente WHERE userName = '$username' AND passWord = '$password'";
                     $res = mysqli_query($con, $sql);
                     if(mysqli_num_rows($res) == 1)
                     {
                         $row = mysqli_fetch_assoc($res);
                         $_SESSION['idUtente'] = $row['idUtente']; 
+                        $_SESSION['userName'] = $row['userName']; 
                         header("Location: index.php");
                     }
                     else
