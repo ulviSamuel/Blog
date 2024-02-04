@@ -39,12 +39,16 @@
             echo "<span id='annoAttuale'>Anno $annoCorrente</span>";
             echo "<button id='annoSuccessivo'>Anno Successivo</button>";
             echo "</div>";
+            if(isset($_GET['cerca']))
+            {
+                $parolaChiave = $_GET['cerca'];
+                if(strlen($parolaChiave) > 0)
+                    echo "<p id='risultatiPerTesto'>Risultati per '$parolaChiave'</p>";
+            }
             require_once("variabili_connessione.php");
             $sql = "SELECT idPost, titoloPost, descrizionePost, dataCreazionePost, pathFotoPost FROM tpost WHERE dataEliminazionePost IS NULL AND YEAR(dataCreazionePost) = $annoCorrente";
-            if(isset($_GET['cerca'])) {
-                $parolaChiave = $_GET['cerca'];
+            if(isset($_GET['cerca']))
                 $sql .= " AND titoloPost LIKE '%" . $parolaChiave . "%'";
-            }
             $res = mysqli_query($con, $sql);
             if(mysqli_num_rows($res) > 0)
             {
@@ -82,12 +86,20 @@
                 window.location.href = "modifica_elimina.php";
             }
 
-            function btnCercaCliccato()
-            {
+            function btnCercaCliccato() {
                 var campoCerca = document.getElementById("bloccoInserisciTestoCerca");
                 var testoCerca = campoCerca.value;
-                window.location.href = "index.php?cerca="+testoCerca;
+                var url = "index.php";
+                var separatori = "?";
+                if (testoCerca.trim() !== "") {
+                    url += separatori + "cerca=" + encodeURIComponent(testoCerca);
+                    separatori = "&";
+                }
+                var annoAttuale = document.getElementById("annoAttuale").innerText.split(' ')[1];
+                url += separatori + "anno=" + annoAttuale;
+                window.location.href = url;
             }
+
 
             document.getElementById('annoPrecedente').addEventListener('click', function() {
                 var annoCorrente = parseInt(document.getElementById('annoAttuale').innerText.split(' ')[1]);

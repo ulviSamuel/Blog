@@ -132,9 +132,9 @@ body {
     background-color: #007bff;
     color: white;
     margin: 1%;
-    width: 30%;
     z-index: 2;
     transition: background-color 0.3s;
+    max-width: 20%;
 }
 
 .btnModificaElimina:hover
@@ -178,7 +178,7 @@ body {
 
 #noPost {
     text-align: center;
-    font-size: 300%;
+    font-size: 250%;
     margin: auto 0;
     margin-top: 10%;
     margin-bottom: 10%;
@@ -210,4 +210,9 @@ body {
 #annoAttuale {
     font-size: 120%;
     margin: 0 1%;
+}
+
+#risultatiPerTesto
+{
+    margin-left: 2%;
 }
