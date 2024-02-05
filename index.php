@@ -20,6 +20,9 @@
             else
             {
                 echo "<h2 id='testoBenvenuto'>Benvenuto ".$_SESSION['userName']."</h2>";
+                echo "<a id='linkLogin' href='logout.php'>";
+                echo "<button id='btnLogin'>Logout</button>";
+                echo "</a>";
                 echo "</div>";
                 echo "<a id='linkNuovoPost' href='nuovo_post.php'>";
                 echo "<button id='btnNuovoPost'>Aggiungi Nuovo Post</button>";
@@ -59,7 +62,6 @@
                     $descrizionePost = $row["descrizionePost"];
                     $dataCreazionePost = $row["dataCreazionePost"];
                     $pathFotoPost       = $row["pathFotoPost"];
-                    echo "<a class='linkPost' href='dettaglio_post.php?idPost=$idPost'>";
                     echo "<div class='post'>";
                     echo "<div class='headerPost'>";
                     $dataFormattata = date("d-m-Y", strtotime($dataCreazionePost));
@@ -67,13 +69,20 @@
                     echo "<h2 class='titoloPost'>$titoloPost</h2>";
                     echo "</div>";
                     echo "<div class='bodyPost'>";
+                    echo "<a class='linkPost' href='dettaglio_post.php?idPost=$idPost'>";
+                    echo "<div class='imgDescrContainer'>";
                     echo "<p class='descrizionePost'>$descrizionePost</p>";
                     echo "<img class='fotoPost' src='$pathFotoPost' alt='foto post'>";
-                    if(isset($_SESSION['idUtente']))
-                        echo "<button onclick='alert('Hai cliccato il pulsante!')' class='btnModificaElimina'>Modifica o Elimina</button>";
-                    echo "</div>";
                     echo "</div>";
                     echo "</a>";
+                    if(isset($_SESSION['idUtente']))
+                    {
+                        echo "<div class='btnEliminaModifica'>";
+                        echo "<button onclick='btnModificaEliminaCliccato()' class='btnModificaElimina'>Modifica o Elimina</button>";
+                        echo "</div>";
+                    }
+                    echo "</div>";
+                    echo "</div>";
                 }
             }
             else

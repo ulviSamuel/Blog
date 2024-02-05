@@ -1,0 +1,3 @@
+INDEX VERSION 1.134+C:\Users\ulivi.samuel\Documents\Quinto Anno\info\.metadata\.plugins\org.eclipse.jdt.core
+3060504156.index
+3376472041.index

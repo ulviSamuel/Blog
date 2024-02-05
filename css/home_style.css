@@ -132,9 +132,9 @@ body {
     background-color: #007bff;
     color: white;
     margin: 1%;
-    z-index: 2;
     transition: background-color 0.3s;
-    max-width: 20%;
+    max-width: 95%;
+    height: 95%;
 }
 
 .btnModificaElimina:hover
@@ -215,4 +215,9 @@ body {
 #risultatiPerTesto
 {
     margin-left: 2%;
+}
+
+.imgDescrContainer
+{
+    display: flex;
 }
