@@ -9,7 +9,7 @@ body {
     flex-direction: column;
     border: 1px solid #ddd;
     border-radius: 30px;
-    margin: 2%;
+    margin: 2vw;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -19,30 +19,30 @@ body {
 }
 
 .dataPost {
-    font-size: 105%;
+    font-size: 1.5vw;
     color: #888;
-    margin-left: 1%;
+    margin-left: 1vw;
 }
 
 .titoloPost {
     color: #333;
     font-size: 200%;
-    margin-left: 2%;
+    margin-left: 2vw;
 }
 
 .descrizionePost {
     color: #666;
-    margin-left: 1%;
-    margin-right: 1%;
-    margin-bottom: 1%;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    margin-bottom: 1vw;
     font-size: 110%;
 }
 
 .fotoPost {
-    width: 30%;
+    width: 40vw;
     border-radius: 8px;
     align-self: flex-end;
-    margin: 2%;
+    margin: 2vw;
     margin-left: auto;
 }
 
@@ -78,8 +78,8 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
-    width: 150%;
-    height: 70%;
+    width: 8vw;
+    height: 4vw;
     transition: background-color 0.3s;
 }
 
@@ -89,10 +89,10 @@ body {
 
 #testoBenvenuto
 {
-    margin-left: 3%;
+    margin-left: 3vw;
     font-size: 180%;
-    margin-top: 1%;
-    margin-bottom: 1%;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
 }
 
 #linkLogin
@@ -122,7 +122,7 @@ body {
 
 #testoPresentazione
 {
-    margin-left: 3%;
+    margin-left: 3vw;
 }
 
 .btnModificaElimina
@@ -131,7 +131,7 @@ body {
     border-radius: 10px;
     background-color: #007bff;
     color: white;
-    margin: 1%;
+    margin: 1vw;
     transition: background-color 0.3s;
     max-width: 95%;
     height: 95%;
@@ -150,15 +150,15 @@ body {
 
 #testoRicerca
 {
-    margin-right: 1%;
+    margin-right: 1vw;
 }
 
 #bloccoInserisciTestoCerca {
-    margin-right: 1%;
-    padding: 0.8%;
+    margin-right: 1vw;
+    padding: 0.8vw;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: 60%;
+    width: 60vw;
     box-sizing: border-box;
 }
 
@@ -188,15 +188,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 2%;
+    margin-top: 2vw;
 }
 
 #rigaFiltroData button {
     background-color: #007bff;
     color: white;
     border: none;
-    padding: 1% 2%;
-    margin: 0 1%;
+    padding: 1vw 2vw;
+    margin: 0 1vw;
     border-radius: 5px;
     cursor: pointer;
     font-size: 102%;
@@ -209,12 +209,12 @@ body {
 
 #annoAttuale {
     font-size: 120%;
-    margin: 0 1%;
+    margin: 0 1vw;
 }
 
 #risultatiPerTesto
 {
-    margin-left: 2%;
+    margin-left: 2vw;
 }
 
 .imgDescrContainer
