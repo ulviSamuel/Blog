@@ -25,7 +25,7 @@
                     $idPost = $row['idPost'];
                     $titoloPost = $row['titoloPost'];
                     $descrizionePost = $row['descrizionePost'];
-                    echo "<form method='POST' action='modifica_post.php?idPost=$idPost'>";
+                    echo "<form method='POST' action='modifica_post.php?idPost=$idPost' enctype='multipart/form-data'>";
                     echo "<label id='txtTitoloPost' for='inTitoloPost'>Inserisci il titolo del post:</label>";
                     echo "<input id='inTitoloPost' type='text' placeholder='$titoloPost' name='titoloPost'>";
                     echo "<label id='txtDescrizionePost' for='inDescrizionePost'>Inserisci la descrizione del post:</label>";
