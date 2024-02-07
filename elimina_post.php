@@ -1,5 +1,9 @@
 <?php
     require_once("variabili_connessione.php");
-    $_REQUEST['idPost'];
-    $sql = "DELETE FROM tpost WHERE id";
+    $idPost = $_REQUEST['idPost'];
+    $data = date("Y-m-d");
+    
+    $sql = "UPDATE tPost SET dataEliminazionePost = '$data' WHERE idPost = $idPost";
+    mysqli_query($con, $sql);
+    header("Location: index.php");
 ?>
