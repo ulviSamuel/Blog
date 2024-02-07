@@ -25,13 +25,13 @@
                     $idPost = $row['idPost'];
                     $titoloPost = $row['titoloPost'];
                     $descrizionePost = $row['descrizionePost'];
-                    echo "<form method='POST' action='modifica_post.php'>";
+                    echo "<form method='POST' action='modifica_post.php?idPost=$idPost'>";
                     echo "<label id='txtTitoloPost' for='inTitoloPost'>Inserisci il titolo del post:</label>";
                     echo "<input id='inTitoloPost' type='text' placeholder='$titoloPost' name='titoloPost'>";
                     echo "<label id='txtDescrizionePost' for='inDescrizionePost'>Inserisci la descrizione del post:</label>";
                     echo "<input id='inDescrizionePost' type='text' placeholder='$descrizionePost' name='descrizionePost'>";
                     echo "<label id='txtImmaginePost' for='inImmaginePost'>Inserisci l'immagine del post:</label>";
-                    echo "<input type='file' id='inImmaginePost' name='immaginePost' accept='image/jpeg, image/png' required>";
+                    echo "<input type='file' id='inImmaginePost' name='immaginePost' accept='image/jpeg, image/png'>";
                     echo "<input id='inImmaginePost' type='submit' name='submit' value='Modifica il Post'>";
                     echo "</form>";
                     echo "<button onclick='btnEliminaCliccato($idPost)'>Elimina il Post</button>";
