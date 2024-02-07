@@ -78,7 +78,7 @@
                     if(isset($_SESSION['idUtente']))
                     {
                         echo "<div class='btnEliminaModifica'>";
-                        echo "<button onclick='btnModificaEliminaCliccato()' class='btnModificaElimina'>Modifica o Elimina</button>";
+                        echo "<button onclick='btnModificaEliminaCliccato($idPost)' class='btnModificaElimina'>Modifica o Elimina</button>";
                         echo "</div>";
                     }
                     echo "</div>";
@@ -90,9 +90,9 @@
             require_once("footer.html");
         ?>
         <script>
-            function btnModificaEliminaCliccato()
+            function btnModificaEliminaCliccato(idPost)
             {
-                window.location.href = "modifica_elimina.php";
+                window.location.href = "modifica_elimina.php?idPost="+idPost;
             }
 
             function btnCercaCliccato() {
