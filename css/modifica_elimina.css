@@ -1,0 +1,117 @@
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#btnLoginRow
+{
+    display: flex;
+}
+
+#btnLogin
+{
+    color: white;
+    font-size: 130%;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 8vw;
+    height: 4vw;
+    transition: background-color 0.3s;
+}
+
+#nomePagina
+{
+    font-size: 250%;
+    margin-bottom: 3%;
+}
+
+#btnLogin:hover {
+    background-color: #0056b3;
+}
+
+#testoBenvenuto
+{
+    margin-left: 3vw;
+    font-size: 180%;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
+
+#linkLogin
+{
+    margin-left: auto;
+    margin-right: 5%;
+}
+
+#nomePagina {
+    text-align: center;
+    margin-top: 2%;
+}
+
+.input-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3%;
+    margin-right: 10%;
+}
+
+.input-row label {
+    flex: 0 0 30%;
+    text-align: right;
+    margin-right: 2%;
+    font-size: 120%;
+}
+
+.input-row input[type="text"],
+.input-row input[type="file"] {
+    flex: 1;
+    padding: 1%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.6vw;
+}
+
+#noPost {
+    text-align: center;
+    font-size: 250%;
+    margin: auto 0;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+#row-mod-del
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#row-buttons
+{
+    display: flex;
+}
+
+#row-buttons button, input[type='submit']
+{
+    color: white;
+    font-size: 130%;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 1%;
+    padding: 1%;
+}
+#row-buttons button:hover, input[type='submit']:hover
+{
+    background-color: #0056b3;
+}

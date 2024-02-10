@@ -8,11 +8,13 @@
                 exit;
             }
          ?>
+         <link rel="stylesheet" href="css/modifica_elimina.css">
     </head>
 
     <body>
         <?php
             require_once("header.html");
+            echo "<div id='btnLoginRow'>";
             echo "<h2 id='testoBenvenuto'>Benvenuto ".$_SESSION['userName']."</h2>";
             echo "<a id='linkLogin' href='logout.php'>";
             echo "<button id='btnLogin'>Logout</button>";
@@ -32,16 +34,26 @@
                     $titoloPost = $row['titoloPost'];
                     $descrizionePost = $row['descrizionePost'];
                     echo "<form method='POST' action='modifica_post.php?idPost=$idPost' enctype='multipart/form-data'>";
+                    echo "<div class='input-row'>";
                     echo "<label id='txtTitoloPost' for='inTitoloPost'>Inserisci il titolo del post:</label>";
                     echo "<input id='inTitoloPost' type='text' placeholder='$titoloPost' name='titoloPost'>";
+                    echo "</div>";
+                    echo "<div class='input-row'>";
                     echo "<label id='txtDescrizionePost' for='inDescrizionePost'>Inserisci la descrizione del post:</label>";
                     echo "<input id='inDescrizionePost' type='text' placeholder='$descrizionePost' name='descrizionePost'>";
+                    echo "</div>";
+                    echo "<div class='input-row'>";
                     echo "<label id='txtImmaginePost' for='inImmaginePost'>Inserisci l'immagine del post:</label>";
                     echo "<input type='file' id='inImmaginePost' name='immaginePost' accept='image/jpeg, image/png'>";
+                    echo "</div>";
+                    echo "<div id='row-buttons'>";
+                    echo "<div id='row-mod-del'>";
                     echo "<input id='inImmaginePost' type='submit' name='submit' value='Modifica il Post'>";
                     echo "</form>";
                     echo "<button onclick='btnEliminaCliccato($idPost)'>Elimina il Post</button>";
+                    echo "</div>";
                     echo "<button onclick='btnAnnullaCliccato()'>Annulla Modifiche e Torna alla Pagina Precedente</button>";
+                    echo "</div>";
                 }
                 else
                     echo "<h1 id='noPost'>Post non trovato</h1>";
