@@ -1,22 +1,24 @@
 <?php
     if(isset($_POST['submit'])) 
     {
+        require_once("variabili_connessione.php");
         $sql = "UPDATE tPost SET ";
         $counter = 0;
         if(isset($_POST['titoloPost']) && strlen($_POST['titoloPost']) != 0)
         {
             $titoloPost = $_POST['titoloPost'];
-            echo $titoloPost;
-            $sql = $sql . "titoloPost = '$titoloPost'";
+            $titoloPostFormattato = mysqli_real_escape_string($con, $titoloPost);
+            $sql = $sql . "titoloPost = '$titoloPostFormattato'";
             ++$counter;
         }
         if(isset($_POST['descrizionePost']) && strlen($_POST['descrizionePost']) != 0)
         {
             $descrizionePost = $_POST['descrizionePost'];
+            $descrizionePostFormattato = mysqli_real_escape_string($con, $descrizionePost);
             if(substr($sql, -1) == "'")
-                $sql = $sql . ", descrizionePost = '$descrizionePost'";
+                $sql = $sql . ", descrizionePost = '$descrizionePostFormattato'";
             else
-                $sql = $sql . "descrizionePost = '$descrizionePost'";
+                $sql = $sql . "descrizionePost = '$descrizionePostFormattato'";
             ++$counter;
         }
         if(isset($_FILES['immaginePost']) && $_FILES['immaginePost']['size'] != 0)
@@ -39,7 +41,6 @@
             header("Location: modifica_elimina.php");
         else
         {   
-            require_once("variabili_connessione.php");
             $idPost = $_REQUEST['idPost'];
             $sql = $sql . " WHERE idPost = $idPost";
             mysqli_query($con, $sql);

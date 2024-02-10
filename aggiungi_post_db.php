@@ -18,7 +18,9 @@
                     }
                     $data = date("Y-m-d");
                     require_once("variabili_connessione.php");
-                    $sql = "INSERT INTO tpost (titoloPost, descrizionePost, dataCreazionePost, pathFotoPost) VALUES ('$titoloPost', '$descrizionePost', '$data', '$dest')";
+                    $titoloPostFormattato = mysqli_real_escape_string($con, $titoloPost);
+                    $descrizionePostFormattato = mysqli_real_escape_string($con, $descrizionePost);
+                    $sql = "INSERT INTO tpost (titoloPost, descrizionePost, dataCreazionePost, pathFotoPost) VALUES ('$titoloPostFormattato', '$descrizionePostFormattato', '$data', '$dest')";
                     mysqli_query($con, $sql);
                     header("Location: index.php");
                 }
