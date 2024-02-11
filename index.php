@@ -15,7 +15,7 @@
                 echo "<button id='btnLogin'>Login</button>";
                 echo "</a>";
                 echo "</div>";
-                echo "<p id='testoPresentazione'>Blog Ulivi è una piattaforma online dedicata alla condivisione di post con la community. Ogni post offre la possibilità di includere un'immagine, un titolo e una descrizione.</p>";
+                echo "<p id='testoPresentazione'>Blog Ulivi è una piattaforma online dedicata alla condivisione di post con la community riguardanti paesaggi. Ogni post offre la possibilità di includere un'immagine, un titolo e una descrizione.</p>";
             }
             else
             {

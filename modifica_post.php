@@ -38,7 +38,7 @@
         }
 
         if($counter == 0)
-            header("Location: modifica_elimina.php");
+            header("Location: " . $_SERVER['HTTP_REFERER']);
         else
         {   
             $idPost = $_REQUEST['idPost'];

@@ -48,11 +48,11 @@
                     echo "</div>";
                     echo "<div id='row-buttons'>";
                     echo "<div id='row-mod-del'>";
-                    echo "<input id='inImmaginePost' type='submit' name='submit' value='Modifica il Post'>";
+                    echo "<input type='submit' name='submit' value='Modifica il Post'>";
                     echo "</form>";
-                    echo "<button onclick='btnEliminaCliccato($idPost)'>Elimina il Post</button>";
+                    echo "<input type='button' onclick='btnEliminaCliccato($idPost)' value='Elimina il Post'>";
                     echo "</div>";
-                    echo "<button onclick='btnAnnullaCliccato()'>Annulla Modifiche e Torna alla Pagina Precedente</button>";
+                    echo "<input type='button' onclick='btnAnnullaCliccato()' value='Annulla Modifiche e Torna alla Pagina Precedente'>";
                     echo "</div>";
                 }
                 else

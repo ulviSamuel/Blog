@@ -98,7 +98,7 @@ body {
     display: flex;
 }
 
-#row-buttons button, input[type='submit']
+#row-buttons input[type='submit'], [type='button']
 {
     color: white;
     font-size: 130%;
@@ -111,7 +111,7 @@ body {
     margin: 1%;
     padding: 1%;
 }
-#row-buttons button:hover, input[type='submit']:hover
+#row-buttons input[type='submit']:hover,[type='button']:hover
 {
     background-color: #0056b3;
 }
