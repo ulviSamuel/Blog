@@ -9,12 +9,13 @@ body {
     margin-left: 1%;
     display: flex;
     align-items: center;
-    margin-bottom: 1%;
 }
 
 #logo {
-    width: 15%;
-    height: fit-content;
+     width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 #titolo {
@@ -24,5 +25,9 @@ body {
 
 #linkHome
 {
-    width: auto;
+    width: 15%;
+}
+
+.spacer {
+    flex-grow: 1;
 }

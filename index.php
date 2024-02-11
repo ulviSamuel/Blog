@@ -72,11 +72,12 @@
                     echo "<a class='linkPost' href='dettaglio_post.php?idPost=$idPost'>";
                     echo "<div class='imgDescrContainer'>";
                     echo "<p class='descrizionePost'>$descrizionePost</p>";
+                    echo "<div class='spacer'></div>";
                     echo "<img class='fotoPost' src='$pathFotoPost' alt='foto post'>";
                     echo "</div>";
                     echo "</a>";
                     if(isset($_SESSION['idUtente']))
-                    {
+                    {                        
                         echo "<div class='btnEliminaModifica'>";
                         echo "<button onclick='btnModificaEliminaCliccato($idPost)' class='btnModificaElimina'>Modifica o Elimina</button>";
                         echo "</div>";
