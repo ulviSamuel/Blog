@@ -15,7 +15,7 @@
                 echo "<button id='btnLogin'>Login</button>";
                 echo "</a>";
                 echo "</div>";
-                echo "<p id='testoPresentazione'>Blog Ulivi è una piattaforma online dedicata alla condivisione di post con la community riguardanti paesaggi. Ogni post offre la possibilità di includere un'immagine, un titolo e una descrizione.</p>";
+                echo "<p id='testoPresentazione'>Blog Ulivi è una piattaforma online dedicata alla condivisione di post con la community riguardanti paesaggi selvaggi. Ogni post offre la possibilità di includere un'immagine, un titolo e una descrizione.</p>";
             }
             else
             {
@@ -52,6 +52,7 @@
             $sql = "SELECT idPost, titoloPost, descrizionePost, dataCreazionePost, pathFotoPost FROM tpost WHERE dataEliminazionePost IS NULL AND YEAR(dataCreazionePost) = $annoCorrente";
             if(isset($_GET['cerca']))
                 $sql .= " AND titoloPost LIKE '%" . $parolaChiave . "%'";
+            $sql .= " ORDER BY dataCreazionePost DESC";
             $res = mysqli_query($con, $sql);
             if(mysqli_num_rows($res) > 0)
             {
@@ -72,7 +73,7 @@
                     echo "<a class='linkPost' href='dettaglio_post.php?idPost=$idPost'>";
                     echo "<div class='imgDescrContainer'>";
                     echo "<p class='descrizionePost'>$descrizionePost</p>";
-                    echo "<div class='spacer'></div>";
+                    echo "<div class='spacer'>Ciao</div>";
                     echo "<img class='fotoPost' src='$pathFotoPost' alt='foto post'>";
                     echo "</div>";
                     echo "</a>";
@@ -119,8 +120,11 @@
 
             document.getElementById('annoSuccessivo').addEventListener('click', function() {
                 var annoCorrente = parseInt(document.getElementById('annoAttuale').innerText.split(' ')[1]);
-                var nuovoAnno = annoCorrente + 1;
-                window.location.href = aggiungiParametroGet('anno', nuovoAnno);
+                if(annoCorrente != new Date().getFullYear())
+                {
+                    var nuovoAnno = annoCorrente + 1;
+                    window.location.href = aggiungiParametroGet('anno', nuovoAnno);
+                }
             });
 
             function aggiungiParametroGet(parametro, valore) {

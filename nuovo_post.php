@@ -25,11 +25,11 @@
         <form method="POST" action="aggiungi_post_db.php" enctype="multipart/form-data">
             <div class="input-row">
             <label id="txtTitoloPost" for="inTitoloPost">Inserisci il titolo del post:</label>
-            <input id="inTitoloPost" type="text" placeholder="Massimo 20 caratteri" name="titoloPost" maxlength="20" required>
+            <input id="inTitoloPost" type="text" placeholder="Minimo 4 caratteri massimo 50" name="titoloPost" minlength="4" maxlength="50" required>
             </div>
             <div class="input-row">
             <label id="txtDescrizionePost" for="inDescrizionePost">Inserisci la descrizione del post:</label>
-            <input id="inDescrizionePost" type="text" name="descrizionePost" required>
+            <input id="inDescrizionePost" type="text" placeholder="Minimo 100 caratteri massimo 1000" name="descrizionePost" minlength="100" maxlength="1000" required>
             </div>
             <div class="input-row">
             <label id="txtImmaginePost" for="inImmaginePost">Inserisci l'immagine del post:</label>

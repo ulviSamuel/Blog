@@ -36,11 +36,11 @@
                     echo "<form method='POST' action='modifica_post.php?idPost=$idPost' enctype='multipart/form-data'>";
                     echo "<div class='input-row'>";
                     echo "<label id='txtTitoloPost' for='inTitoloPost'>Inserisci il titolo del post:</label>";
-                    echo "<input id='inTitoloPost' type='text' placeholder='$titoloPost' name='titoloPost'>";
+                    echo "<input id='inTitoloPost' type='text' placeholder='$titoloPost' name='titoloPost' minlength='4' maxlength='50'>";
                     echo "</div>";
                     echo "<div class='input-row'>";
                     echo "<label id='txtDescrizionePost' for='inDescrizionePost'>Inserisci la descrizione del post:</label>";
-                    echo "<input id='inDescrizionePost' type='text' placeholder='$descrizionePost' name='descrizionePost'>";
+                    echo "<input id='inDescrizionePost' type='text' placeholder='$descrizionePost' name='descrizionePost' minlength='100' maxlength='1000'>";
                     echo "</div>";
                     echo "<div class='input-row'>";
                     echo "<label id='txtImmaginePost' for='inImmaginePost'>Inserisci l'immagine del post:</label>";
