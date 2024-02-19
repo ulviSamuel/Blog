@@ -1,7 +1,7 @@
+<?php require_once("variabili_connessione.php"); ?>
 <html>
     <head>
         <link rel="stylesheet" href="css/home_style.css">
-        <?php session_start(); ?>
     </head>
 
     <body>
@@ -48,7 +48,6 @@
                 if(strlen($parolaChiave) > 0)
                     echo "<p id='risultatiPerTesto'>Risultati per '$parolaChiave'</p>";
             }
-            require_once("variabili_connessione.php");
             $sql = "SELECT idPost, titoloPost, descrizionePost, dataCreazionePost, pathFotoPost FROM tpost WHERE dataEliminazionePost IS NULL AND YEAR(dataCreazionePost) = $annoCorrente";
             if(isset($_GET['cerca']))
                 $sql .= " AND titoloPost LIKE '%" . $parolaChiave . "%'";

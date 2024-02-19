@@ -1,8 +1,8 @@
+<?php require_once("variabili_connessione.php"); ?>
 <html>
 
     <head>
         <?php
-            session_start(); 
             if (!isset($_SESSION['idUtente'])) {
                 header("Location: index.php");
                 exit;
@@ -21,8 +21,7 @@
             echo "</a>";
             echo "</div>";
             echo "<h2 id='nomePagina'>Pagina di modifica del post</h2>";
-
-            require_once("variabili_connessione.php");
+            
             if(isset($_REQUEST['idPost']))
             {
                 $sql = "SELECT idPost, titoloPost, descrizionePost FROM tpost WHERE idPost = ".$_REQUEST['idPost'];

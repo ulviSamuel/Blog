@@ -1,8 +1,8 @@
+<?php require_once("variabili_connessione.php"); ?>
 <html>
 
     <head>
         <?php
-            session_start(); 
             if (!isset($_SESSION['idUtente'])) {
                 header("Location: index.php");
                 exit;

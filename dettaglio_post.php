@@ -1,13 +1,12 @@
+<?php require_once("variabili_connessione.php"); ?>
 <html>
     <head>
         <link rel="stylesheet" href="css/dettaglio_post_style.css">
-        <?php session_start(); ?>
     </head>
 
     <body>
-        <?php require_once("header.html"); ?>
-        <?php
-            require_once("variabili_connessione.php");
+        <?php 
+            require_once("header.html");
             if(isset($_GET['idPost']))
             {
                 $idPost = $_GET['idPost'];
@@ -23,7 +22,8 @@
                         $dataCreazionePost = $row["dataCreazionePost"];
                         $pathFotoPost       = $row["pathFotoPost"];
                         echo "<div class='headerPost'>";
-                        echo "<a href='index.php'>";
+                        $paginaPrecedente = $_SERVER['HTTP_REFERER'];
+                        echo "<a href='$paginaPrecedente'>";
                         echo "<button class='btnTornaIndietro'>Torna alla pagina iniziale</button>";
                         echo "</a>";
                         echo "<h2 class='titoloPost'>$titoloPost</h2>";

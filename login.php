@@ -1,3 +1,4 @@
+<?php require_once("variabili_connessione.php"); ?>
 <html>
     <head>
         <link rel="stylesheet" href="css/login_style.css">

@@ -1,6 +1,6 @@
+<?php require_once("variabili_connessione.php"); ?>
 <html>
     <head>
-        <?php session_start(); ?>
     </head>
 
     <body>
@@ -11,7 +11,6 @@
                 if(isset($_POST['password']))
                 {
                     $password = $_POST['password'];
-                    require_once("variabili_connessione.php");
                     $sql = "SELECT idUtente, userName FROM tutente WHERE userName = '$username' AND passWord = '$password'";
                     $res = mysqli_query($con, $sql);
                     if(mysqli_num_rows($res) == 1)

@@ -1,3 +1,5 @@
 <?php
-    $con = mysqli_connect("localhost", "root", "", "blogulivi");
+    ob_start();
+    session_start();
+    $con = mysqli_connect("localhost", "quintaf", "Qu!nta", "blogulivi");
 ?>

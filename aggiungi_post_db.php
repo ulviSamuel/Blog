@@ -1,4 +1,5 @@
 <?php
+    require_once("variabili_connessione.php");
     if(isset($_POST['submit'])) 
     {
         if(isset($_POST['titoloPost']))
@@ -17,7 +18,6 @@
                         echo "Errore";
                     }
                     $data = date("Y-m-d");
-                    require_once("variabili_connessione.php");
                     $titoloPostFormattato = mysqli_real_escape_string($con, $titoloPost);
                     $descrizionePostFormattato = mysqli_real_escape_string($con, $descrizionePost);
                     $sql = "INSERT INTO tpost (titoloPost, descrizionePost, dataCreazionePost, pathFotoPost) VALUES ('$titoloPostFormattato', '$descrizionePostFormattato', '$data', '$dest')";
