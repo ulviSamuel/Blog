@@ -24,7 +24,7 @@
                         echo "<div class='headerPost'>";
                         $paginaPrecedente = $_SERVER['HTTP_REFERER'];
                         echo "<a href='$paginaPrecedente'>";
-                        echo "<button class='btnTornaIndietro'>Torna alla pagina iniziale</button>";
+                        echo "<button class='btnTornaIndietro'>Torna alla pagina precedente</button>";
                         echo "</a>";
                         echo "<h2 class='titoloPost'>$titoloPost</h2>";
                         $dataFormattata = date("d-m-Y", strtotime($dataCreazionePost));

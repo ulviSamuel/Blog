@@ -39,6 +39,7 @@ body {
 .titoloPost {
     font-size: 250%;
     margin: 0 auto;
+    margin-left: 2%;
 }
 
 .dataPost {

@@ -3,7 +3,7 @@
     $idPost = $_REQUEST['idPost'];
     $data = date("Y-m-d");
     
-    $sql = "UPDATE tPost SET dataEliminazionePost = '$data' WHERE idPost = $idPost";
+    $sql = "UPDATE tpost SET dataEliminazionePost = '$data' WHERE idPost = $idPost";
     mysqli_query($con, $sql);
     header("Location: index.php");
 ?>

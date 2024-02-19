@@ -2,7 +2,7 @@
     require_once("variabili_connessione.php");
     if(isset($_POST['submit'])) 
     {
-        $sql = "UPDATE tPost SET ";
+        $sql = "UPDATE tpost SET ";
         $counter = 0;
         if(isset($_POST['titoloPost']) && strlen($_POST['titoloPost']) != 0)
         {
