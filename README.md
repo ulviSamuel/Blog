@@ -1,217 +1,101 @@
 # Blog
 
-![PHP](https://img.shields.io/badge/PHP-Web%20Application-777BB4?logo=php&logoColor=white)
-![Stato](https://img.shields.io/badge/Stato-Progetto%20scolastico-orange)
-![Anno](https://img.shields.io/badge/Anno-2024-lightgrey)
-![Frontend](https://img.shields.io/badge/Frontend-HTML%20%2B%20CSS-blue)
+OrizzontiSelvaggi.com is a procedural PHP web application for browsing and managing illustrated blog posts about wild landscapes.
 
-**Blog** è un progetto scolastico realizzato nel **2024**: una web application in **PHP** per la gestione di articoli con autenticazione utente e operazioni CRUD sui post.
+![PHP](https://img.shields.io/badge/PHP-Web%20application-777BB4?logo=php&logoColor=white)
+![Category](https://img.shields.io/badge/Category-Academic%20project-orange)
+![UI](https://img.shields.io/badge/UI-HTML%20%2B%20CSS-1572B6?logo=html5&logoColor=white)
+![Year](https://img.shields.io/badge/Year-2024-lightgrey)
 
-L’applicazione consente di visualizzare l’elenco dei post, accedere al dettaglio, creare nuovi contenuti, modificarli ed eliminarli, con gestione della sessione utente (login/logout).
+> [!NOTE]
+> This repository contains an academic project originally developed during earlier programming studies. It is preserved as a record of the technical knowledge, design decisions, and development experience acquired at the time.
 
----
+## Overview
 
-## Indice
+The application renders posts from a relational database and provides separate public and authenticated workflows. Visitors can browse posts, filter them by publication year, search titles, and open an individual post. Authenticated users can create posts with images, edit existing posts, and mark posts as deleted.
 
-- [Descrizione](#descrizione)
-- [Funzionalità](#funzionalità)
-- [Struttura del progetto](#struttura-del-progetto)
-- [Architettura](#architettura)
-- [Tecnologie utilizzate](#tecnologie-utilizzate)
-- [Flusso utente](#flusso-utente)
-- [Configurazione](#configurazione)
-- [Esecuzione del progetto](#esecuzione-del-progetto)
-- [Note sul progetto](#note-sul-progetto)
-- [Possibili miglioramenti futuri](#possibili-miglioramenti-futuri)
-- [Autore](#autore)
-- [Licenza](#licenza)
+The implementation is intentionally compact: PHP pages contain the request handling and HTML rendering, shared header and footer fragments provide common layout elements, CSS files provide page-specific styling, and `db/blogulivi.sql` contains the database schema and sample content.
 
----
+## Features
 
-## Descrizione
+- Browse non-deleted posts grouped by publication year.
+- Search post titles from the home page.
+- Open a post detail page with its title, date, description, and image.
+- Authenticate with a username and password backed by the `tutente` table.
+- Create posts with a title, description, and JPEG or PNG upload.
+- Edit a post's title, description, and optionally its image.
+- Mark posts as deleted without removing their database row.
+- Log out and clear the active PHP session.
 
-L’obiettivo del progetto è implementare un blog dinamico con backend PHP e persistenza dati su database, includendo:
+## Technology stack
 
-- autenticazione amministrativa;
-- gestione completa dei post (creazione, modifica, eliminazione);
-- visualizzazione homepage con contenuti;
-- pagina di dettaglio per singolo articolo.
+- **Backend and rendering:** PHP
+- **Database access:** MySQLi
+- **Database:** MySQL/MariaDB-compatible SQL dump
+- **Frontend:** HTML, CSS, and browser-side JavaScript
+- **Assets:** Repository-hosted JPEG and PNG images
 
-Il progetto è organizzato in file PHP funzionali, con componenti condivisi per header/footer, risorse statiche (CSS/img) e script SQL di supporto nel folder `db/`.
-
----
-
-## Funzionalità
-
-Il sistema permette di svolgere le principali operazioni di un blog:
-
-- visualizzazione elenco post (`index.php`);
-- visualizzazione dettaglio articolo (`dettaglio_post.php`);
-- login utente (`login.php` + `auth.php`);
-- logout (`logout.php`);
-- creazione nuovo post (`nuovo_post.php` + `aggiungi_post_db.php`);
-- modifica post esistente (`modifica_post.php`);
-- eliminazione post (`elimina_post.php`);
-- schermata dedicata gestione modifica/elimina (`modifica_elimina.php`);
-- utilizzo di layout condiviso (`header.html`, `footer.html`);
-- configurazione connessione DB (`variabili_connessione.php`).
-
----
-
-## Struttura del progetto
+## Project structure
 
 ```text
-Blog/
-│
-├── index.php
-├── dettaglio_post.php
-├── nuovo_post.php
-├── aggiungi_post_db.php
-├── modifica_post.php
-├── elimina_post.php
-├── modifica_elimina.php
-│
-├── login.php
-├── auth.php
-├── logout.php
-│
-├── variabili_connessione.php
+.
+├── index.php                  # Post listing, search, and year navigation
+├── dettaglio_post.php         # Individual post view
+├── login.php                  # Login form
+├── auth.php                   # Credential check and session setup
+├── logout.php                 # Session cleanup
+├── nuovo_post.php             # New-post form
+├── aggiungi_post_db.php       # Post creation handler
+├── modifica_elimina.php       # Edit/delete page
+├── modifica_post.php          # Post update handler
+├── elimina_post.php           # Soft-delete handler
+├── variabili_connessione.php  # Database connection and session bootstrap
 ├── header.html
 ├── footer.html
-│
-├── css/
-├── img/
-├── db/
-│
-├── .gitattributes
-└── .metadata/
+├── css/                       # Page-specific stylesheets
+├── img/                       # Logos and post images
+└── db/blogulivi.sql           # Schema and sample data
 ```
 
----
+## Getting started
 
-## Architettura
+### Prerequisites
 
-Il progetto segue una separazione semplice e didattica tra pagine, logica di autenticazione, operazioni dati e risorse statiche.
+- PHP with the MySQLi extension.
+- A MySQL or MariaDB server.
 
-### Area pubblica
+The repository does not include a package manifest, dependency lockfile, build configuration, or automated test suite.
 
-- `index.php`: pagina principale del blog;
-- `dettaglio_post.php`: dettaglio del singolo contenuto.
+### Database setup
 
-### Area autenticazione
+1. Create a local database named `blogulivi`.
+2. Import [`db/blogulivi.sql`](db/blogulivi.sql) into that database.
+3. Review `variabili_connessione.php` and set its connection values for the local database. Do not publish credentials or reuse credentials from the repository in another environment.
 
-- `login.php`: form/interfaccia login;
-- `auth.php`: verifica credenziali e gestione accesso;
-- `logout.php`: chiusura sessione.
+The SQL dump creates the `tpost`, `tmodificapost`, and `tutente` tables and includes sample records.
 
-### Area gestione contenuti (CRUD)
+### Run locally
 
-- `nuovo_post.php`: form creazione post;
-- `aggiungi_post_db.php`: inserimento post nel database;
-- `modifica_post.php`: aggiornamento contenuto;
-- `elimina_post.php`: rimozione post;
-- `modifica_elimina.php`: pagina di gestione operazioni.
-
-### Componenti condivisi
-
-- `header.html` e `footer.html`: layout riutilizzabile;
-- `css/`: stile grafico;
-- `img/`: immagini del progetto;
-- `db/`: risorse SQL/database;
-- `variabili_connessione.php`: parametri connessione DB.
-
----
-
-## Tecnologie utilizzate
-
-- **PHP** (logica backend e rendering dinamico)
-- **CSS** (presentazione)
-- **HTML** (struttura UI)
-- Database relazionale tramite connessione configurata da file PHP
-
-Composizione linguaggi repository:
-
-- PHP: **65.5%**
-- CSS: **32.6%**
-- HTML: **1.9%**
-
----
-
-## Flusso utente
-
-Un flusso tipico dell’applicazione:
-
-1. accesso alla homepage con elenco post;
-2. apertura dettaglio di un articolo;
-3. login amministratore;
-4. creazione nuovo post oppure modifica/eliminazione post esistente;
-5. logout e ritorno alla navigazione pubblica.
-
----
-
-## Configurazione
-
-La connessione al database è gestita da:
-
-- `variabili_connessione.php`
-
-Prima dell’avvio in locale:
-
-- impostare host, username, password e nome database corretti;
-- verificare eventuali script SQL presenti nella cartella `db/`.
-
----
-
-## Esecuzione del progetto
-
-Il progetto può essere eseguito in ambiente PHP locale (XAMPP/WAMP/MAMP o equivalente).
-
-### Avvio rapido (PHP built-in server)
-
-Dalla root del progetto:
+From the repository root, serve the files with a PHP-enabled web server whose document root is this directory. With the PHP CLI installed, the built-in server can be started with:
 
 ```bash
 php -S localhost:8000
 ```
 
-Poi aprire:
+Then open <http://localhost:8000/index.php>.
 
-```text
-http://localhost:8000/index.php
-```
+The repository does not define a separate build step. No automated test command is provided.
 
----
+## Implementation notes
 
-## Note sul progetto
+The application uses a page-oriented procedural structure rather than a framework. `index.php` and `dettaglio_post.php` provide public browsing, while the authentication and post-management handlers use the PHP session initialized in `variabili_connessione.php`. Post records remain in the database after deletion and are excluded from public queries when `dataEliminazionePost` is set.
 
-Questo repository contiene un **progetto scolastico del 2024**, realizzato con finalità didattiche per esercitarsi su:
+This is an educational implementation and should not be treated as a production-ready service without further security, validation, and deployment work.
 
-- sviluppo web lato server in PHP;
-- autenticazione e sessioni;
-- operazioni CRUD su database;
-- composizione layout con componenti riutilizzabili;
-- organizzazione risorse frontend.
+## Project status
 
----
+The Git history records the project as ready for delivery on February 11, 2024, followed by fixes for a new server and a presentation-text change later that month. The repository is documented here as a historical academic project; no current maintenance or deployment status is claimed.
 
-## Possibili miglioramenti futuri
+## License
 
-- migrazione verso architettura MVC più strutturata;
-- validazioni server/client più robuste;
-- protezioni CSRF e hardening sicurezza login;
-- paginazione e ricerca post;
-- upload immagini associato ai post;
-- gestione ruoli (admin/editor);
-- test automatici e pipeline CI.
-
----
-
-## Autore
-
-Progetto realizzato da **Samuel Ulivi**.
-
----
-
-## Licenza
-
-Questo progetto è stato sviluppato per scopi scolastici e didattici.
+No license file or explicit license declaration is present in the repository. Licensing remains to be determined by the project owner.
