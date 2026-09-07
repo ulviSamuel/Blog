@@ -98,4 +98,4 @@ The Git history records the project as ready for delivery on February 11, 2024, 
 
 ## License
 
-No license file or explicit license declaration is present in the repository. Licensing remains to be determined by the project owner.
+This project is shared for educational and portfolio purposes. All rights reserved unless otherwise stated.
